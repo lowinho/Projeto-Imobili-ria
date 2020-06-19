@@ -6,26 +6,13 @@ export default class Contato extends Model {
             nome: {
                 type: Sequelize.STRING,
                 defaultValue: '',
-                validate: {
-                    len: {
-                        args: [3, 255],
-                        msg: 'Nome precisa ter entre 3 e 255 caracteres'
-                    }
-                },
+
             },
 
             telefone: {
                 type: Sequelize.STRING,
                 defaultValue: '',
-                validate: {
-                    isNumeric: {
-                        len: {
-                            min: 10,
-                            max: 11,
-                            msg: 'Telefone precisa ter entre 10 e 11 números'
-                        }
-                    },
-                },
+
             },
 
             email: {
@@ -39,13 +26,9 @@ export default class Contato extends Model {
             },
 
             mensagem: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
                 defaultValue: '',
-                validade: {
-                    min: 5,
-                    max: 1024,
-                    msg: 'mensagem precisa ter entre 5 e 1024 caracteres'
-                },
+
             },
 
 

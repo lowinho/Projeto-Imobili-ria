@@ -17,7 +17,9 @@ class ContatoController {
             const { id, nome, telefone, email, mensagem } = novoContato;
             return res.json({ id, nome, telefone, email, mensagem });
         } catch (e) {
-            res.json({ msg: 'Erro ao enviar dados' });
+            res.json({
+                errors: e.errors.map((err) => err.message)
+            });
         }
     }
 
